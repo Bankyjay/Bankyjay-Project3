@@ -148,7 +148,7 @@ jobs:
             - project/.circleci/ansible/inventory.txt
       - destroy-environment
 workflows:
-  default:
+  myworkflows:
     jobs:
       - build-frontend
       - build-backend
