@@ -111,13 +111,12 @@ jobs:
             npm audit fix --audit-level=critical --force
             npm audit --audit-level=critical
   deploy-infrastructure:
-    docker:
-      - image: amazon/aws-cli
+    executor: aws
     steps:
       - checkout
-      - run: 
-          name: Install tar and gzip
-          command: yum -y install tar gzip 
+      - run:
+          name: ...Install tar and gzip
+          command: yum install -y tar gzip
       - run:
           name: Ensure back-end infrastructure exists
           command: |
