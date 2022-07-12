@@ -307,7 +307,6 @@ jobs:
             ansible-playbook -i inventory.txt deploy-backend.yml
       - destroy-environment
     
-
 workflows:
   default:
     jobs:
