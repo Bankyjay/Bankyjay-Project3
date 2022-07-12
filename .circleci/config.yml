@@ -199,11 +199,12 @@ jobs:
             echo TYPEORM_DATABASE=$TYPEORM_DATABASE >> "backend/.env"
             cd backend
             npm install
-            npm fund
-            npm audit fix
-            npm audit fix --audit-level=critical
             npm run migrations > migrations_dump.txt
-            cat migrations_dump.txt 
+            cat migrations_dump.txt
+            npm fund
+            npm audit
+            npm audit fix
+            npm audit fix --force
       - run:
           name: Send migration status to kvdb.io 
           command: |   
