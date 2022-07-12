@@ -1,15 +1,15 @@
 ---
-- name: "Update apt packages"
+- name: Update apt packages
   become: true
   apt:
     update_cache: "yes"
 
-- name: "Upgrade apt packages"
+- name: Upgrade apt packages
   become: true
   apt:
     upgrade: "yes"
 
-- name: "install dependencies"
+- name: install dependencies
   become: true
   apt:
     name: ["nodejs", "npm" ]
@@ -19,3 +19,34 @@
   file:
     path: /home/ubuntu/backend
     state: directory
+
+- name: Unzip backend files
+  unarchive:
+    src: /root/project/artifact.tar.gz
+    dest: /home/ubuntu/backend
+
+- name: install npm
+  become: true
+  command: npm install -g n
+  args:
+    chdir: /home/ubuntu/backend
+
+- name: install latest pm2
+  become: true
+  npm:
+    name: pm2
+    global: yes
+    production: yes
+    state: present
+
+- name: npm build package
+  become: true
+  command: npm run build
+  args:
+    chdir: /home/ubuntu/backend
+
+- name: Executing node
+  become: true
+  command: pm2 start npm --name backend -- run start
+  args:
+    chdir: /home/ubuntu/backend
