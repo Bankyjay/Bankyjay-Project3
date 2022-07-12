@@ -1,11 +1,4 @@
 ---
-- name: "configuration play." 
-  hosts: web
-  user: ubuntu
-  gather_facts: false
-  vars:
-    - ansible_host_key_checking: false
-
 - name: Update apt packages
   become: true
   apt:
