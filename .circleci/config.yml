@@ -406,8 +406,9 @@ jobs:
             
             export OldWorkflowID=$(curl --insecure https://kvdb.io/G5xSRWaFrwiykmUeNoVdDo/old_workflow_id)
             echo Old Workflow ID: $OldWorkflowID 
+            echo s3://${OldWorkflowID}
             
-            if [[ "${STACKS[@]}" =~ "${OldWorkflowID}" ]]
+            if [[ "${STACKS[@]}" != "${OldWorkflowID}" ]]
             then
               echo "---------------------------Delete Confirmed---------------------------"
               aws s3 rm "s3://${OldWorkflowID}" --recursive
