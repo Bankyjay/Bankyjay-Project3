@@ -1,8 +1,11 @@
 *---------------[URLS]--------------*
 
----------------[GITHUB]-------------
-https://github.com/Bankyjay?tab=repositories
+---------------[GITHUB]-----------------
+https://github.com/Bankyjay/Bankyjay-Project3
 
 ---------------[PUBLIC URL S3]-----------
-http://udapeople-d7fc986.s3-website-us-east-1.amazonaws.com
+http://udapeople-8a13fcc.s3-website-us-east-1.amazonaws.com
+
+----------------[CLoudfrontURL]----------
+https://d25lsl7w0zffo3.cloudfront.net
 
