@@ -4,8 +4,8 @@
 https://github.com/Bankyjay/Bankyjay-Project3
 
 ---------------[PUBLIC URL S3]-----------
-http://udapeople-8a13fcc.s3-website-us-east-1.amazonaws.com
+http://udapeople-fb59bfb.s3-website-us-east-1.amazonaws.com
 
 ----------------[CLoudfrontURL]----------
-https://d25lsl7w0zffo3.cloudfront.net
+http://d2v5ymi79oy93x.cloudfront.net
 
